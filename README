@@ -1,0 +1,37 @@
+* The URL of the original source code is https://github.com/akma327/mbti-net
+* We modified and added the following files
+    - added feed_forward_rnn.py
+    - added logistic_regression.py
+    - added demo.py
+    - added demo_api.py
+    - added bidirectional_lstm.py
+
+* Running demo.py
+    - Update the input text in ../input/input.txt
+    - run the following command to display the predicted personality type
+        python demo.py
+
+* Running demo_api.py
+    - Start the server with the following command
+        python demo_api.py
+
+    - Make the following API call
+           curl -X POST \
+           http://localhost:3000/prediction \
+           -H 'Content-Type: application/json' \
+           -d '{"data":<INPUT TEXT>}'
+
+* Running models
+    - Run the baseline model which is a logistic regression model in our case
+        python baseline_logistic_regression.py
+    - Run the feed forward neural network
+        python feed_forward_nn.py
+    - Run the recurrent neural network
+        python bidirectional_lstm.py
+* Major software requirements:
+    - Tensorflow
+
+* Data - https://nlp.stanford.edu/projects/glove/
+         glove.6B.50d.txt
+         glove.6B.100d.txt
+         The above two files needs to be included in the data directory. They have not been included in git because of size constraints. They are however available in the cited link
